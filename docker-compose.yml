@@ -17,3 +17,7 @@ services:
       - "8080:8080"
     volumes:
       - /data/app/jira:/var/atlassian/jira
+    environment:
+      - JIRA_PROXY_NAME=jira.conceptant.com
+      - JIRA_PROXY_PORT=443
+      - JIRA_PROXY_SCHEME=https

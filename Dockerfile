@@ -32,10 +32,7 @@ RUN set -x && \
     chmod -R 700 "${JIRA_INSTALL}/logs" && \
     chmod -R 700 "${JIRA_INSTALL}/temp" && \
     chmod -R 700 "${JIRA_INSTALL}/work" && \
-    chown -R daemon:daemon "${JIRA_INSTALL}/conf" && \
-    chown -R daemon:daemon "${JIRA_INSTALL}/logs" && \
-    chown -R daemon:daemon "${JIRA_INSTALL}/temp" && \
-    chown -R daemon:daemon "${JIRA_INSTALL}/work" && \
+    chown -R daemon:daemon "${JIRA_INSTALL}" && \
     chmod +x /docker-entrypoint.sh
 
 USER daemon:daemon
