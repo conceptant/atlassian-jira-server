@@ -26,7 +26,8 @@ RUN set -x && \
     tar xzvf /tmp/atlassian.tar.gz --directory "${JIRA_INSTALL}" --strip-components=1 --no-same-owner && \
     rm /tmp/atlassian.tar.gz && \
     curl -Lo /tmp/mysql-connector.tar.gz "https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.48.tar.gz" && \
-    tar xzvf /tmp/mysql-connector.tar.gz "mysql-connector-java-5.1.48/mysql-connector-java-5.1.48-bin.jar"  --directory "${JIRA_INSTALL}/lib" --strip-components=1 --no-same-owner  && \
+    tar xzvf /tmp/mysql-connector.tar.gz --directory "${JIRA_INSTALL}/lib" --strip-components=1 --no-same-owner  "mysql-connector-java-5.1.48/mysql-connector-java-5.1.48-bin.jar" && \
+    rm /tmp/mysql-connector.tar.gz && \
     chmod -R 700 "${JIRA_INSTALL}/conf" && \
     chmod -R 700 "${JIRA_INSTALL}/logs" && \
     chmod -R 700 "${JIRA_INSTALL}/temp" && \

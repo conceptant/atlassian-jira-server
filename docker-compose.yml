@@ -1,0 +1,19 @@
+version: '2'
+services:
+  mysql:
+    restart: unless-stopped
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    volumes:
+      - /data/app/jira/db/data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD="<choose_your_password>"
+
+  jira:
+    restart: unless-stopped
+    image: conceptant/atlassian-jira-server
+    ports:
+      - "8080:8080"
+    volumes:
+      - /data/app/jira:/var/atlassian/jira
